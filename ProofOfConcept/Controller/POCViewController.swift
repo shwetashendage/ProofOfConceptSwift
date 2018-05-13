@@ -16,6 +16,8 @@ class POCViewController: UITableViewController {
     let service = POCServiceClass()
     var factsArray: [POCFacts] = []
     let reachability = Reachability()!
+    var spinnerActivity: MBProgressHUD?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +36,14 @@ class POCViewController: UITableViewController {
         }
         else{
             
+            //Show Progress View
+            self.showIndicator()
+            
             //Call Service
             service.getResults(completion: { results, headerTitle, errorMessage in
+                
+                //Hide Progress View
+                self.hideIndicator()
                 
                 //Update Header Title
                 if !headerTitle.isEmpty {
@@ -71,6 +79,23 @@ class POCViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    //MARK: MBProgressHUD
+    func showIndicator() {
+        
+        DispatchQueue.main.async {
+            
+            // fetch data from server
+            self.spinnerActivity = MBProgressHUD.showAdded(to: self.view, animated: true);
+            self.spinnerActivity?.label.text = "Please Wait...";
+            self.spinnerActivity?.isUserInteractionEnabled = true;
+        }
+    }
+    
+    func hideIndicator() {
+        DispatchQueue.main.async {
+            self.spinnerActivity?.hide(animated: true)
+        }
     }
     
     //MARK: TableView
