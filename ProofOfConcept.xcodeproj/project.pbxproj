@@ -28,6 +28,10 @@
 		E429B2E620A85EAF00DC42A1 /* POCFacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429B2E420A85EAF00DC42A1 /* POCFacts.swift */; };
 		E429B2E720A85EAF00DC42A1 /* POCFacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429B2E420A85EAF00DC42A1 /* POCFacts.swift */; };
 		E429B2E820A85EAF00DC42A1 /* POCFacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429B2E420A85EAF00DC42A1 /* POCFacts.swift */; };
+		E429B2EB20A86F8700DC42A1 /* POCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429B2EA20A86F8700DC42A1 /* POCTableViewCell.swift */; };
+		E429B2EC20A86F8700DC42A1 /* POCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429B2EA20A86F8700DC42A1 /* POCTableViewCell.swift */; };
+		E429B2ED20A86F8700DC42A1 /* POCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429B2EA20A86F8700DC42A1 /* POCTableViewCell.swift */; };
+		E429B2EE20A86F8700DC42A1 /* POCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429B2EA20A86F8700DC42A1 /* POCTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +87,7 @@
 		E429B2D820A85A5600DC42A1 /* ProofOfConceptParseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProofOfConceptParseTests.swift; sourceTree = "<group>"; };
 		E429B2DA20A85A5600DC42A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E429B2E420A85EAF00DC42A1 /* POCFacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POCFacts.swift; sourceTree = "<group>"; };
+		E429B2EA20A86F8700DC42A1 /* POCTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POCTableViewCell.swift; sourceTree = "<group>"; };
 		ED82E5F016EECF235911D34E /* Pods-ProofOfConceptTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProofOfConceptTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProofOfConceptTests/Pods-ProofOfConceptTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,6 +182,7 @@
 			children = (
 				E429B29A20A8533B00DC42A1 /* AppDelegate.swift */,
 				E429B2E320A85E9600DC42A1 /* Model */,
+				E429B2E920A86F4300DC42A1 /* View */,
 				E429B2C820A8565500DC42A1 /* Controller */,
 				E429B2D120A856EB00DC42A1 /* Networking */,
 				E429B2CD20A856CB00DC42A1 /* POCConstants.swift */,
@@ -235,6 +241,14 @@
 				E429B2E420A85EAF00DC42A1 /* POCFacts.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E429B2E920A86F4300DC42A1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E429B2EA20A86F8700DC42A1 /* POCTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -494,11 +508,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ProofOfConcept/Pods-ProofOfConcept-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -615,6 +631,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E429B2EB20A86F8700DC42A1 /* POCTableViewCell.swift in Sources */,
 				E429B2CE20A856CB00DC42A1 /* POCConstants.swift in Sources */,
 				E429B2E520A85EAF00DC42A1 /* POCFacts.swift in Sources */,
 				E429B29D20A8533B00DC42A1 /* POCViewController.swift in Sources */,
@@ -631,6 +648,7 @@
 				E429B2B020A8533B00DC42A1 /* ProofOfConceptTests.swift in Sources */,
 				E429B2CB20A8569E00DC42A1 /* POCServiceClass.swift in Sources */,
 				E429B2E620A85EAF00DC42A1 /* POCFacts.swift in Sources */,
+				E429B2EC20A86F8700DC42A1 /* POCTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,6 +658,7 @@
 			files = (
 				E429B2BB20A8533B00DC42A1 /* ProofOfConceptUITests.swift in Sources */,
 				E429B2E720A85EAF00DC42A1 /* POCFacts.swift in Sources */,
+				E429B2ED20A86F8700DC42A1 /* POCTableViewCell.swift in Sources */,
 				E429B2CC20A8569E00DC42A1 /* POCServiceClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -652,6 +671,7 @@
 				E429B2D920A85A5600DC42A1 /* ProofOfConceptParseTests.swift in Sources */,
 				E429B2E020A85AF000DC42A1 /* POCServiceClass.swift in Sources */,
 				E429B2E820A85EAF00DC42A1 /* POCFacts.swift in Sources */,
+				E429B2EE20A86F8700DC42A1 /* POCTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

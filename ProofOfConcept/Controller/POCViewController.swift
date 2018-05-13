@@ -19,7 +19,13 @@ class POCViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.title = "POC"
+        
+        self.tableView.register(POCTableViewCell.self, forCellReuseIdentifier: "pocCell")
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 120
+        self.tableView.separatorInset = .zero
         
         if reachability.connection == .none{
             
@@ -39,6 +45,7 @@ class POCViewController: UITableViewController {
                 //Create facts array
                 if let results = results {
                     self.factsArray = results
+                    self.tableView.reloadData()
                 }
                 
                 //Check for Error Message
@@ -66,6 +73,23 @@ class POCViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: TableView
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.factsArray.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "pocCell", for: indexPath) as! POCTableViewCell
+        
+        cell.titleLabel.text = self.factsArray[indexPath.row].title
+        cell.descriptionLabel.text = self.factsArray[indexPath.row].description
+        cell.imageProfile.image = #imageLiteral(resourceName: "default-user-image")
+        
+        return cell
+        
+    }
     
 }
 
