@@ -11,4 +11,14 @@ struct POCConstants {
     
     static let POCUrl = "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json"
     
+    struct POCKeys {
+        
+        static let POCHeaderTitle = "title"
+        static let POCArray = "rows"
+        static let POCTitle = "title"
+        static let POCImage = "imageHref"
+        static let POCDescription = "description"
+
+    }
+    
 }
