@@ -15,7 +15,6 @@ class POCTableViewCell: UITableViewCell {
     let imageProfile = UIImageView()
     let descriptionLabel = UILabel()
     
-    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         
         super.init(style: .default, reuseIdentifier: reuseIdentifier)

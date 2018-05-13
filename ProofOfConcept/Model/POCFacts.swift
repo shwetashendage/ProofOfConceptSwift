@@ -22,7 +22,7 @@ class POCFacts{
             self.imageHref = imageHref
         }
         else{
-            self.imageHref = "No Image"
+            self.imageHref = POCConstants.POCNoImage
             
         }
         

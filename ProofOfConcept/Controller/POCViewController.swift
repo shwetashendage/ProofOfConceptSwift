@@ -17,7 +17,8 @@ class POCViewController: UITableViewController {
     var factsArray: [POCFacts] = []
     let reachability = Reachability()!
     var spinnerActivity: MBProgressHUD?
-    
+    var cache : NSCache<AnyObject,AnyObject>!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,8 @@ class POCViewController: UITableViewController {
         self.tableView.estimatedRowHeight = 120
         self.tableView.separatorInset = .zero
         
+        cache = NSCache()
+
         if reachability.connection == .none{
             
             self.showAlertWith(title: "Message", message: "No Internet connection.")
@@ -111,6 +114,36 @@ class POCViewController: UITableViewController {
         cell.titleLabel.text = self.factsArray[indexPath.row].title
         cell.descriptionLabel.text = self.factsArray[indexPath.row].description
         cell.imageProfile.image = #imageLiteral(resourceName: "default-user-image")
+        if self.factsArray[indexPath.row].imageHref == POCConstants.POCNoImage{
+
+        }else if self.cache.object(forKey: self.factsArray[indexPath.row].imageHref! as AnyObject) != nil{
+            cell.imageProfile.image = (self.cache.object(forKey: self.factsArray[indexPath.row].imageHref! as AnyObject) as! UIImage)
+        }
+        else{
+            
+
+            service.getImageFromUrlString(urlString: self.factsArray[indexPath.row].imageHref!, completion: { image, error in
+                
+                //Check For Image
+                if let thereIsImage = image{
+                    
+                    DispatchQueue.main.async{
+                        if let updateCell = tableView.cellForRow(at: indexPath) as? POCTableViewCell{
+                            
+                            updateCell.imageProfile.image = thereIsImage
+                            
+                        }
+                    }
+                    
+                    self.cache.setObject(thereIsImage, forKey: self.factsArray[indexPath.row].imageHref! as AnyObject)
+                }
+                //Check for Error Message
+                if !error.isEmpty {
+                }
+                
+                
+            })
+        }
         
         return cell
         

@@ -20,6 +20,8 @@ class POCServiceClass{
     var factsArray : [POCFacts] = []
     typealias JSONDictinary = [String : Any]
     typealias factsResult = ([POCFacts]?, String, String) -> ()
+    typealias factsImageResult = (UIImage?, String) -> ()
+
     var headerTitle = ""
     
     
@@ -85,5 +87,43 @@ class POCServiceClass{
             
             
         }
+    }
+    func getImageFromUrlString(urlString:String, completion: @escaping factsImageResult ){
+        guard let url = URL(string :urlString) else {
+            return
+        }
+        dataTask = defaultSession.dataTask(with: url, completionHandler: {data, response, error in
+            if let error = error{
+                self.errorMessage += "Error cause: " + error.localizedDescription + "\n"
+                
+                
+                DispatchQueue.main.async {
+                    
+                    completion(nil, self.errorMessage)
+                    
+                }
+                
+                
+            }else if let data = data, let response = response as? HTTPURLResponse , response.statusCode == 200 {
+                
+                if let image = UIImage(data: data){
+                    DispatchQueue.main.async {
+                        
+                        completion(image, self.errorMessage)
+                        
+                    }
+                }
+                else{
+                    
+                    DispatchQueue.main.async {
+                        
+                        completion(nil, self.errorMessage)
+                        
+                    }
+                }
+                
+            }
+        })
+        dataTask?.resume()
     }
 }
