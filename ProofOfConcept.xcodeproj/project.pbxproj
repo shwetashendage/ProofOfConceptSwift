@@ -177,7 +177,7 @@
 			children = (
 				E429B29A20A8533B00DC42A1 /* AppDelegate.swift */,
 				E429B2E320A85E9600DC42A1 /* Model */,
-				E429B2C820A8565500DC42A1 /* ViewController */,
+				E429B2C820A8565500DC42A1 /* Controller */,
 				E429B2D120A856EB00DC42A1 /* Networking */,
 				E429B2CD20A856CB00DC42A1 /* POCConstants.swift */,
 				E429B2A120A8533B00DC42A1 /* Assets.xcassets */,
@@ -204,12 +204,12 @@
 			path = ProofOfConceptUITests;
 			sourceTree = "<group>";
 		};
-		E429B2C820A8565500DC42A1 /* ViewController */ = {
+		E429B2C820A8565500DC42A1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				E429B29C20A8533B00DC42A1 /* POCViewController.swift */,
 			);
-			path = ViewController;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		E429B2D120A856EB00DC42A1 /* Networking */ = {
@@ -493,10 +493,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ProofOfConcept/Pods-ProofOfConcept-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

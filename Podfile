@@ -4,7 +4,8 @@ use_frameworks!
 target 'ProofOfConcept' do
     
     pod 'SwiftyJSON', '~> 4.0'
-    
+    pod 'ReachabilitySwift'
+
     
     target 'ProofOfConceptTests' do
         inherit! :search_paths
