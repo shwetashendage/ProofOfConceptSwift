@@ -30,8 +30,18 @@ class POCViewController: UITableViewController {
         self.tableView.estimatedRowHeight = 120
         self.tableView.separatorInset = .zero
         
+        //Refresh control
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
+        
         cache = NSCache()
 
+       //Get Data
+        getData()
+        
+    }
+    
+    func getData() {
         if reachability.connection == .none{
             
             self.showAlertWith(title: "Message", message: "No Internet connection.")
@@ -64,12 +74,19 @@ class POCViewController: UITableViewController {
                     print("Error: " + errorMessage)
                     self.showAlertWith(title: "Message", message: "Error occurred")
                 }
+                
+                //End Refreshing
+                self.refreshControl?.endRefreshing()
             })
             
         }
-        
+    }
+    //MARK: Refresh
+    @objc func pullToRefresh(){
+        getData()
     }
     
+    //MARK: Alert
     func showAlertWith(title: String, message: String, style: UIAlertControllerStyle = .alert) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
         let action = UIAlertAction(title: "Ok", style: .default) { (action) in
