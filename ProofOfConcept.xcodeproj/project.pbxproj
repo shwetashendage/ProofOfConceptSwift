@@ -12,6 +12,12 @@
 		E429B2A220A8533B00DC42A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E429B2A120A8533B00DC42A1 /* Assets.xcassets */; };
 		E429B2B020A8533B00DC42A1 /* ProofOfConceptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429B2AF20A8533B00DC42A1 /* ProofOfConceptTests.swift */; };
 		E429B2BB20A8533B00DC42A1 /* ProofOfConceptUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429B2BA20A8533B00DC42A1 /* ProofOfConceptUITests.swift */; };
+		E429B2CA20A8569E00DC42A1 /* POCServiceClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429B2C920A8569E00DC42A1 /* POCServiceClass.swift */; };
+		E429B2CB20A8569E00DC42A1 /* POCServiceClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429B2C920A8569E00DC42A1 /* POCServiceClass.swift */; };
+		E429B2CC20A8569E00DC42A1 /* POCServiceClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429B2C920A8569E00DC42A1 /* POCServiceClass.swift */; };
+		E429B2CE20A856CB00DC42A1 /* POCConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429B2CD20A856CB00DC42A1 /* POCConstants.swift */; };
+		E429B2CF20A856CB00DC42A1 /* POCConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429B2CD20A856CB00DC42A1 /* POCConstants.swift */; };
+		E429B2D020A856CB00DC42A1 /* POCConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429B2CD20A856CB00DC42A1 /* POCConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +49,8 @@
 		E429B2B620A8533B00DC42A1 /* ProofOfConceptUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProofOfConceptUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E429B2BA20A8533B00DC42A1 /* ProofOfConceptUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProofOfConceptUITests.swift; sourceTree = "<group>"; };
 		E429B2BC20A8533B00DC42A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E429B2C920A8569E00DC42A1 /* POCServiceClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POCServiceClass.swift; sourceTree = "<group>"; };
+		E429B2CD20A856CB00DC42A1 /* POCConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POCConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				E429B29A20A8533B00DC42A1 /* AppDelegate.swift */,
-				E429B29C20A8533B00DC42A1 /* POCViewController.swift */,
+				E429B2C820A8565500DC42A1 /* ViewController */,
 				E429B2A120A8533B00DC42A1 /* Assets.xcassets */,
 				E429B2A620A8533B00DC42A1 /* Info.plist */,
 			);
@@ -117,6 +125,24 @@
 				E429B2BC20A8533B00DC42A1 /* Info.plist */,
 			);
 			path = ProofOfConceptUITests;
+			sourceTree = "<group>";
+		};
+		E429B2C820A8565500DC42A1 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E429B29C20A8533B00DC42A1 /* POCViewController.swift */,
+				E429B2D120A856EB00DC42A1 /* Networking */,
+				E429B2CD20A856CB00DC42A1 /* POCConstants.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E429B2D120A856EB00DC42A1 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E429B2C920A8569E00DC42A1 /* POCServiceClass.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,8 +277,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E429B2CE20A856CB00DC42A1 /* POCConstants.swift in Sources */,
 				E429B29D20A8533B00DC42A1 /* POCViewController.swift in Sources */,
 				E429B29B20A8533B00DC42A1 /* AppDelegate.swift in Sources */,
+				E429B2CA20A8569E00DC42A1 /* POCServiceClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +288,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E429B2CF20A856CB00DC42A1 /* POCConstants.swift in Sources */,
 				E429B2B020A8533B00DC42A1 /* ProofOfConceptTests.swift in Sources */,
+				E429B2CB20A8569E00DC42A1 /* POCServiceClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +298,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E429B2D020A856CB00DC42A1 /* POCConstants.swift in Sources */,
 				E429B2BB20A8533B00DC42A1 /* ProofOfConceptUITests.swift in Sources */,
+				E429B2CC20A8569E00DC42A1 /* POCServiceClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
