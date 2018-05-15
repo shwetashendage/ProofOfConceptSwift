@@ -11,7 +11,9 @@ struct POCConstants {
     
     static let POCUrl = "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json"
     static let POCNoImage = "No Image"
-    
+    static let POCPadding = CGFloat(10)
+    static let POCImageHeightWidth = 100
+
     struct POCKeys {
         
         static let POCHeaderTitle = "title"

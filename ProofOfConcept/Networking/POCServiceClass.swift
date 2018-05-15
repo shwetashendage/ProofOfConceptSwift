@@ -28,7 +28,7 @@ class POCServiceClass{
     
     
     func getResults(completion: @escaping factsResult) {
-       
+       //Webservice call
         
         dataTask?.cancel()
         
@@ -59,6 +59,7 @@ class POCServiceClass{
     }
     
     func createFactsArray(_ data: Data) {
+        // Parse data
         
         //Remove all objects always
         factsArray.removeAll()
@@ -92,7 +93,7 @@ class POCServiceClass{
         }
     }
     func getImageFromUrlString(urlString:String, completion: @escaping factsImageResult ){
-        
+        // Image download
 
         guard let url = URL(string :urlString) else {
             return

@@ -33,12 +33,12 @@ class POCTableViewCell: UITableViewCell {
         self.imageProfile.image = #imageLiteral(resourceName: "default-user-image")
         contentView.addSubview(self.imageProfile)
 
-        let padding:UIEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10)
+        let padding:UIEdgeInsets = UIEdgeInsetsMake(POCConstants.POCPadding, POCConstants.POCPadding, POCConstants.POCPadding, POCConstants.POCPadding)
         
         self.imageProfile.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(contentView).offset(padding.top)
             make.left.equalTo(contentView).offset(padding.left)
-            make.height.width.equalTo(100)
+            make.height.width.equalTo(POCConstants.POCImageHeightWidth)
             make.bottom.lessThanOrEqualTo(-padding.bottom)
             
         }
