@@ -47,5 +47,14 @@ class ProofOfConceptParseTests: XCTestCase {
         
         XCTAssertGreaterThan(systemUnderTest!.factsArray.count, 0, "No Elements")
     }
+    // Performance
+    func test_ImageDownload_Performance() {
+        
+        measure {
+            self.systemUnderTest?.getImageFromUrlString(urlString: "http://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/American_Beaver.jpg/220px-American_Beaver.jpg", completion: {image, error in
+                
+            })
+        }
+    }
     
 }

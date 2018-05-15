@@ -33,6 +33,7 @@
 		E429B2ED20A86F8700DC42A1 /* POCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429B2EA20A86F8700DC42A1 /* POCTableViewCell.swift */; };
 		E429B2EE20A86F8700DC42A1 /* POCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429B2EA20A86F8700DC42A1 /* POCTableViewCell.swift */; };
 		E429B30620A87D2500DC42A1 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E429B30520A87D2500DC42A1 /* MBProgressHUD.m */; };
+		E4D0F0CB20AAA77A006FB7F0 /* POCConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429B2CD20A856CB00DC42A1 /* POCConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -562,9 +563,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ProofOfConceptUITests/Pods-ProofOfConceptUITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -680,6 +686,7 @@
 				E429B2E720A85EAF00DC42A1 /* POCFacts.swift in Sources */,
 				E429B2ED20A86F8700DC42A1 /* POCTableViewCell.swift in Sources */,
 				E429B2CC20A8569E00DC42A1 /* POCServiceClass.swift in Sources */,
+				E4D0F0CB20AAA77A006FB7F0 /* POCConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -874,7 +881,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Shweta.ProofOfConceptTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "ProofOfConcept/Networking/ProofOfConceptTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "ProofOfConcept/ProofOfConcept-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -894,7 +901,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Shweta.ProofOfConceptTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "ProofOfConcept/Networking/ProofOfConceptTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "ProofOfConcept/ProofOfConcept-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProofOfConcept.app/ProofOfConcept";
@@ -912,7 +919,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Shweta.ProofOfConceptUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "ProofOfConcept/Networking/ProofOfConceptUITests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "ProofOfConcept/ProofOfConcept-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -931,7 +938,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Shweta.ProofOfConceptUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "ProofOfConcept/Networking/ProofOfConceptUITests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "ProofOfConcept/ProofOfConcept-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = ProofOfConcept;
@@ -949,7 +956,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Shweta.ProofOfConceptParseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "ProofOfConcept/Networking/ProofOfConceptParseTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "ProofOfConcept/ProofOfConcept-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -968,7 +975,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Shweta.ProofOfConceptParseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "ProofOfConcept/Networking/ProofOfConceptParseTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "ProofOfConcept/ProofOfConcept-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProofOfConcept.app/ProofOfConcept";

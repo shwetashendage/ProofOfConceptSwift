@@ -29,7 +29,8 @@ class POCViewController: UITableViewController {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 120
         self.tableView.separatorInset = .zero
-        
+        self.tableView.accessibilityIdentifier = "factsTableView"
+
         //Refresh control
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
